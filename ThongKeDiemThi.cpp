@@ -11,6 +11,7 @@ int main(){
 			c++;
 		}
 	}
+	//xắp sếp mảng theo chiều tăng dần
 	for (int i=0;i<n;i++){
 		for (int j=i+1;j<n;j++){
 			if (a[i]<a[j]){
@@ -20,12 +21,15 @@ int main(){
 			}
 		}
 	}
+	
 	cout<<c<<"\n";
+	//nếu số sinh viên nhập vào nhỏ hơn hoặc bằng 10 thì in ra n sinh viên
 	if (n<=10){
 		for (int i=0;i<n;i++){
 			cout<<a[i]<<" ";
 		}
 	}
+	//nếu không thì in ra 10 người có điểm cao nhất
 	else {
 		for (int i=0;i<10;i++){
 			cout<<a[i]<<" ";
