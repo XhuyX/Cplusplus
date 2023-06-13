@@ -6,19 +6,15 @@ struct thuoc{
 	void in(){
 		cin>>ten>>hsd>>sl>>dg;
 	}
-	void out(){
-		cout<<ten<<","<<hsd<<","<<sl<<","<<dg<<"\n";
-	}
 };
-int check(string x){
-	int a[3];
-	int c=0;
-	for (int i=0;i<x.size();i++){
-		if (x[i]>='0'&& x[i]<='9'){
-			int d=x[i]-'0';
+int check(string s){
+	int a[3],c=0;
+	for (int i=0;i<s.size();i++){
+		if (s[i]>='0'&& s[i]<='9'){
+			int d=s[i]-'0';
 			int j=i+1;
-			while(isdigit(x[j])){
-				d=d*10 + x[j]-'0';
+			while(isdigit(s[j])){
+				d=d*10 + s[j]-'0';
 				j++;
 			}
 			i=j;
@@ -36,7 +32,6 @@ int check(string x){
 			}
 			else {
 				if (a[1]==5){
-					
 					if (a[0]<19){
 						return 1;
 					}
@@ -56,25 +51,21 @@ int check(string x){
 }
 int main(){
 	long long ss=0;
-	int c=0;
-	int n;
+	int n,c=0;
 	cin>>n;
-	vector <thuoc> v;
 	while(n--){
 		thuoc x;
 		x.in();
-		v.push_back(x);
-	}
-	for (int i=0;i<v.size();i++){
-		if (check(v[i].hsd)){
+		if(check(x.hsd)){
 			c++;
-			ss+= v[i].sl * v[i].dg;
+			ss+= x.sl * x.dg;
 		}
 	}
-	cout<<c<<"\n"<<ss;
+	cout<<c<<'\n'<<ss;
 	return 0;
-} 
+}
 /*
+4
 Atropin_sulfat 20/03/2023 10 50000
 Meloxicam 10/10/2023 5 100000
 Paracetamol 01/12/2022 15 30000
