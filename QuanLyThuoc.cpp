@@ -22,32 +22,14 @@ int check(string s){
 		}
 	}
 	swap(a[0],a[1]);
-	if (a[2]<2023){
-		return 1;
+	if (a[2]!= 2023){
+		return a[2]<2023;
 	}
-	else {
-		if (a[2]==2023){
-			if (a[1]<5){
-				return 1;
-			}
-			else {
-				if (a[1]==5){
-					if (a[0]<19){
-						return 1;
-					}
-					else {
-						return 0;
-					}
-				}
-				else {
-					return 0;
-				}
-			}
-		}
-		else {
-			return 0;
-		}
+	if (a[1]!= 5){
+		return a[1]<5;
 	}
+	return a[0]<19;
+	
 }
 int main(){
 	long long ss=0;
